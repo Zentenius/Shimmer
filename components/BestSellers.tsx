@@ -1,15 +1,19 @@
+"use client"
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { useRouter } from 'next/navigation'
+
 
 type Props = {}
 
 const BestSellers = (props: Props) => {
+const router = useRouter()
   return (
     <div className="min-h-screen flex justify-center space-y-10  flex-col">
       <div className=' ml-24 space-y-6'>
         <h1 className=" uppercase text-5xl font-bold  ">Best Sellers</h1>
-        <Button className="py-3 px-16 uppercase hover:bg-[#f8f4f4]  bg-transparent border-black border text-black">View All</Button>
+        <Button onClick={() => router.push("/shop/")} className="py-3 px-16 uppercase hover:bg-[#f8f4f4]  bg-transparent border-black border text-black">View All</Button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-6 gap-y-8 max-w-full mx-auto px-4  py-12">
         {/* Card 1 */}
